@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background: #f2f2f2;
+  max-width: 100%;
 }
 .container {
   /* max-width: 1000px; */
@@ -35,7 +36,7 @@ body {
 
 /* Center  */
 .header-center h1 {
-  font-size: 10em;
+  font-size: 10vw;
   margin: 0;
   font-weight: bold;
 }
@@ -46,6 +47,20 @@ body {
   margin-top: 5px;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.flex span {
+  flex: 1;
+}
+.line_t {
+  background-color: rgba(84, 81, 81, 0.372);
+  height: 1px;
+  margin: 0 8px;
+}
 .header-right {
   font-size: 0.9em;
   color: #c45d00;
@@ -59,11 +74,11 @@ body {
   gap: 20px;
   margin-top: 20px;
 }
-/* Left Column (articles) */
+/* Lower grid inside left column */
 .grid-lower {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
   margin-top: 20px;
 }
 .Govt-Policy {
@@ -89,16 +104,28 @@ body {
 .highlight {
   background: #f26419;
   color: #fff;
-  padding: 10px 200px 200px 10px;
+  padding: 10px;
   margin: 20px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .highlight h2 {
-  font-size: 5em;
+  font-size: 8vw;
   margin: 0;
+  flex: 1 1 100%;
 }
-.hightlight p {
-  margin-top: 10px;
-  font-size: 1em;
+.highlight p {
+  margin: 0 auto;
+  font-size: 3vw;
+  flex: 1 1 300px;
+}
+.highlight img {
+  flex: 1 1 250px;
+  border-radius: 8px;
+  height: auto;
+  width: 100%;
 }
 
 /* Sidebar  */
@@ -111,6 +138,7 @@ body {
   background: #eee;
   padding: 15px;
   border-left: 5px solid #f26419;
+  border-radius: 4px;
 }
 
 .sidebar .box h3 {
@@ -118,4 +146,45 @@ body {
   font-size: 1.2em;
   border-bottom: 2px solid #f26419;
   padding-bottom: 5px;
+}
+
+/* Responsive Design */
+
+/* mobile screens : <600px */
+@media (max-width: 600px) {
+  .header-center h1 {
+    font-size: 2em;
+  }
+
+  .grid-lower {
+    grid-template-columns: 1fr;
+  }
+
+  .flex span {
+    font-size: 0.9em;
+  }
+  body {
+    font-size: 15px;
+  }
+}
+
+/* tablet screens : <900px */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    text-align: center;
+  }
+  .header-left,
+  .header-center,
+  .header-right {
+    text-align: center;
+  }
+}
+
+.para-color:: {
+  color: #ff0000;
+  font-variant: small-caps;
 }
